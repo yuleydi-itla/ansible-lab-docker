@@ -1,0 +1,45 @@
+---
+- name: Administrar servidores Docker con Ansible
+  hosts: docker
+  gather_facts: true
+
+  tasks:
+    - name: Obtener el nombre del host
+      command: hostname
+      register: hostname_result
+
+    - name: Mostrar el nombre del host
+      debug:
+        msg: "Nombre del host: {{ hostname_result.stdout }}"
+
+    - name: Mostrar el sistema operativo
+      debug:
+        msg: "Sistema operativo: {{ ansible_distribution }} {{ ansible_distribution_version }}"
+
+    - name: Crear el directorio /tmp/ansible-demo
+      file:
+        path: /tmp/ansible-demo
+        state: directory
+        mode: "0755"
+
+    - name: Crear el archivo info.txt
+      copy:
+        dest: /tmp/ansible-demo/info.txt
+        content: |
+          Servidor: {{ inventory_hostname }}
+          Sistema Operativo: {{ ansible_distribution }} {{ ansible_distribution_version }}
+
+    - name: Crear directorios
+      file:
+        path: "/tmp/ansible-demo/{{ item }}"
+        state: directory
+        mode: "0755"
+      loop:
+        - logs
+        - backup
+        - config
+
+    - name: Mostrar mensaje si el sistema es Ubuntu
+      debug:
+        msg: "Este servidor utiliza Ubuntu."
+      when: ansible_distribution == "Ubuntu"
