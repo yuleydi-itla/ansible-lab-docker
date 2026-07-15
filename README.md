@@ -74,7 +74,7 @@ La ejecución del playbook finalizó correctamente en ambos servidores, obtenien
 
 A continuación se muestra la captura de pantalla de la ejecución correcta del playbook:
 
-![Ejecución exitosa del playbook](imagen)
+![Ejecución exitosa del playbook]
 <img width="1650" height="875" alt="Captura de pantalla 2026-07-15 150207" src="https://github.com/user-attachments/assets/0b76b80c-7697-4b1b-983d-829d51fc5c72" />
 <img width="1742" height="890" alt="Captura de pantalla 2026-07-15 150400" src="https://github.com/user-attachments/assets/c76436c9-6b78-4825-ac17-8295831e799c" />
 <img width="1742" height="890" alt="Captura de pantalla 2026-07-15 150400" src="https://github.com/user-attachments/assets/2f2fbf2b-1aa5-4cfc-afbd-e95f392f88f2" />
